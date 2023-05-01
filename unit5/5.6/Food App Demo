@@ -1,0 +1,74 @@
+//FoodRunner.java
+import java.util.Scanner;
+
+public class FoodRunner
+{
+    public static void main(String[] args)
+    {
+        // Start here!
+        Food burger = new Food("Hamburgers", 600);
+        Food fries = new Food("French Fries", 350);
+        Food coke = new Food("Coke", 200);
+        
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println(burger.toString());
+        System.out.println("How many would you like?");
+        int burgerOrder = input.nextInt();
+        
+        System.out.println(fries.toString());
+        System.out.println("How many would you like?");
+        int friesOrder = input.nextInt();
+        
+        System.out.println(coke.toString());
+        System.out.println("How many would you like?");
+        int cokeOrder = input.nextInt();
+        
+        int totalCal = (burger.getCalories() * burgerOrder) + (fries.getCalories() * friesOrder) + (coke.getCalories() * cokeOrder);
+        
+        System.out.println("Your meal will have a total of " + totalCal + " calories");
+    }
+}
+
+
+//Food.java
+public class Food
+{
+        //Declare instance variables
+        private String name;
+        private int calories;
+        
+        //Create Food Constructor
+        public Food(String inName, int inCal)
+        {
+            name = inName;
+            calories = inCal;
+        }
+        
+        //Add getter and setter methods for calories
+        public void setName(String newName)
+        {
+            name = newName;
+        }
+        public String getName()
+        {
+            return name;
+        }
+        
+        //Add getter and setter methods for name
+        public void setCalories(int newCal)
+        {
+            calories = newCal;
+        }
+        public int getCalories()
+        {
+            return calories;
+        }
+        
+        //Add toString method
+        public String toString()
+        {
+            return name + " have " + calories + " calories.";
+        }
+    
+}
