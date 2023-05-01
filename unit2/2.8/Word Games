@@ -1,0 +1,98 @@
+//WordGames.java
+public class WordGames
+{
+    private String word;
+    
+    public WordGames(String text)
+    {
+        word = text;
+    }
+    
+    public String scramble()
+    {
+        int wordLength = word.length();
+        wordLength /= 2;
+        String scrambleOne = word.substring(wordLength);
+        String scrambleTwo = word.substring(0, wordLength);
+        String scrambled = (scrambleOne + scrambleTwo);
+      return scrambled;
+    }
+    
+    
+    public String bananaSplit(int insertIdx, String insertText)
+    {
+        String splitOne = word.substring(0, insertIdx);
+        String splitTwo = word.substring(insertIdx);
+        String splitted = (splitOne + insertText + splitTwo);
+        return splitted;
+       
+    }
+    
+    
+    public String bananaSplit(String insertChar, String insertText)
+    {
+        int index = word.indexOf(insertChar);
+        String splitOne = word.substring(0, index);
+        String splitTwo = word.substring(index);
+        String inserted = (splitOne + insertText + splitTwo);
+        return inserted;
+    }
+    
+    
+    public String toString()
+    {
+       String wordEdit = ("[" + word + "]");
+       return wordEdit;
+        
+    }
+    
+    
+}
+
+
+//WordGameTester.java
+import java.util.Scanner;
+
+public class WordGameTester
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        
+        
+        // Ask for a word
+        System.out.println("Enter a word: ");
+        String text = input.nextLine();
+        
+        WordGames game = new WordGames(text);
+        
+        // Scramble it
+        // Print out scrambled word
+        System.out.println(game.scramble());
+        // Ask for an index
+        // Ask for random word
+        System.out.println("Enter an integer: ");
+        int idx = input.nextInt();
+        input.nextLine();  // skip over the newline
+        System.out.println("Enter another word: ");
+        String word = input.nextLine();
+        
+        // Add random word at index
+        System.out.println(game.bananaSplit(idx, word));
+        // Print out the word
+        
+        
+        // Ask for a character (store as a String)
+        System.out.println("Enter a character: ");
+        String character = input.nextLine();
+        // Ask for random word
+        System.out.println("Enter another word: ");
+        String thirdWord = input.nextLine();
+        // Add random word at character
+        System.out.println(game.bananaSplit(character, thirdWord));
+        // Print out the word
+        
+        
+        
+    }
+}
