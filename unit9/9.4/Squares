@@ -1,0 +1,74 @@
+//SquareTester.java
+public class SquareTester
+{
+    public static void main(String[] args)
+    {
+        // Start here!
+        System.out.println("f");
+        System.out.println("f");
+    }
+}
+
+
+//Square.java
+public class Square extends Rectangle {
+
+    // Call to the Rectangle constructor
+    public Square(double sideLength){
+       super(sideLength, sideLength);
+    }
+
+    //Set both the width and height in the superclass
+    public void setSideLength(double sideLength){
+        super.setWidth(sideLength);
+        super.setHeight(sideLength);
+    }
+    
+    // Get the width and/or the height from the superclass
+    public double area(){
+      return super.getWidth() * super.getWidth();
+    }
+    
+    // Get the width and/or the height from the superclass
+    public double perimeter(){
+      return super.getWidth() * 4;
+    } 
+
+    // Override to read: ___ x ____ Square
+    public String toString(){
+        return super.getWidth() + " x " + super.getWidth() + " Square";
+    }
+}
+
+
+//Rectangle.java
+public class Rectangle {
+
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height){
+        this.width = width;
+        this.height = height;
+    }
+
+    public double getWidth(){
+        return width;
+    }
+
+    public void setWidth(double width){
+        this.width = width;
+    }
+
+    public double getHeight(){
+        return height;
+    }
+
+    public void setHeight(double height){
+        this.height = height;
+    }
+
+    public String toString(){
+        return width + " x " + height + " Rectangle";
+    }
+}
