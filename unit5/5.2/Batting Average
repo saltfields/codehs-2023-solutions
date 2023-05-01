@@ -1,0 +1,44 @@
+//BaseballTester.java
+public class BaseballTester
+{
+    public static void main(String[] args)
+    {
+        BaseballPlayer babeRuth = new BaseballPlayer("Babe Ruth", 2873, 8399);
+        System.out.println(babeRuth);
+        
+        babeRuth.printBattingAverage();
+        // Call the function printBattingAverage here
+        
+    }
+}
+
+
+//BaseballPlayer.java
+public class BaseballPlayer
+{
+    private int hits;
+    private int atBats;
+    private String name;
+    
+    //Add constructor here
+    
+    public BaseballPlayer(String plName, int plHits, int plAtBats)
+    {
+        hits = plHits;
+        atBats = plAtBats;
+        name = plName;
+    }
+    
+    public void printBattingAverage()
+    {
+        double battingAverage = hits / (double) atBats;
+        System.out.println(battingAverage);
+    }
+    
+    public String toString()
+    {
+        return name + ": " + hits + "/" + atBats;
+    }
+    
+    
+}
