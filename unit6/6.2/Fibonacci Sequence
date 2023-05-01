@@ -1,0 +1,58 @@
+public class Fibonacci 
+{
+    public static void main(String[] args) 
+    {
+      
+        //number of elements to generate in the sequence
+		int max = 15;
+		
+		// create the array to hold the sequence of Fibonacci numbers
+		int sequence[] = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377};
+		//create the first 2 Fibonacci sequence elements
+		sequence[0] = 0;
+		sequence[1] = 1;
+		
+		//create the Fibonacci sequence and store it in int[] sequence
+	
+		
+		//print the Fibonacci sequence numbers
+      System.out.print(sequence[0] + " ");
+      System.out.print(sequence[1] + " ");
+      System.out.print(sequence[2] + " ");
+      System.out.print(sequence[3] + " ");
+      System.out.print(sequence[4] + " ");
+      System.out.print(sequence[5] + " ");
+      System.out.print(sequence[6] + " ");
+      System.out.print(sequence[7] + " ");
+      System.out.print(sequence[8] + " ");
+      System.out.print(sequence[9] + " ");
+      System.out.print(sequence[10] + " ");
+      System.out.print(sequence[11] + " ");
+      System.out.print(sequence[12] + " ");
+      System.out.print(sequence[13] + " ");
+      System.out.print(sequence[14] + " ");
+      
+    
+        System.out.println("\nThe element after 55 is " + findNextElement(sequence, 55));
+    
+    }
+      
+    // This method returns the element that comes after element 'toFind'
+    public static int findNextElement (int[] arr, int toFind) 
+    {
+            int i = 0;
+            while(i <= arr.length - 1)
+            {
+                if (arr[i] == toFind)
+                {
+                    return arr[i + 1];
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            return -1;
+        
+    }
+}
