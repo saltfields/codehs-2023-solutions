@@ -1,0 +1,29 @@
+public class ExtractDigits
+{
+    public static void main(String[] args)
+    {
+        extractDigits(2938724);
+        
+    }
+    
+    public static void extractDigits(int num)
+    {
+        int length = String.valueOf(num).length();
+        String strNum = String.valueOf(num);
+        while (length >= 1)
+        {
+            
+            if (length == -1)
+            {
+                break;
+            }
+            
+            else if (length >= 0)
+            {
+                System.out.println(strNum.substring(length - 1, length));
+                length--;
+            }
+        }
+        
+    }
+}
