@@ -1,0 +1,36 @@
+//MatchingStringTester.java
+public class MatchingStringTester
+{
+   public static void main(String[] args)
+   {
+     System.out.println(MatchingString.findString("Karel"));
+     
+   }
+}
+
+
+//MatchingString.java
+public class MatchingString
+{
+
+    private static String[] arr = {"Hello", "Karel", "CodeHS!", "Karel"};
+    
+    public static int findString(String myString)
+    {
+        // your code goes here!
+        int i = 0;
+        
+        while (i<= arr.length - 1)
+        {
+        if (myString.equals(arr[i]))
+        {
+            return i;
+        }
+        else
+        {
+            i++;
+        }
+        }
+        return -1;
+    }
+}
