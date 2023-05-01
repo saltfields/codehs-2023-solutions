@@ -1,0 +1,58 @@
+//TwoDTester.java
+public class TwoDTester {
+
+    public static void main(String[] args) {
+
+
+        Integer[][] firstArray = {{2,3}, {3,4}, {4,5}};
+        Integer[][] secondArray = {{2,3}, {3,4}, {4,5}};
+        TwoDArray first = new TwoDArray(firstArray);
+        
+        System.out.println(first.equals(secondArray));
+        
+        String[][] thirdArray = {{"Hello", "Goodbye"}, 
+                                 {"Hola", "Adios"},
+                                 {"Bonjour", "Au revoir"}};
+        String[][] fourthArray = {{"Hello", "Goodbye"}, 
+                                 {"Ciao", "Addio"},
+                                 {"Bonjour", "Au revoir"}};
+        TwoDArray third = new TwoDArray(thirdArray);
+        
+        System.out.println(third.equals(fourthArray));
+    }
+
+}
+
+
+//TwoDArray.java
+public class TwoDArray {
+
+    private Object[][] myArray;
+
+    public TwoDArray(Object[][] input){
+        myArray = input;
+    }
+
+    public boolean equals(Object[][] other){
+        
+        boolean same = true;
+        
+        if (myArray.length != other.length) {
+            return false;
+        }
+        
+        for (int i = 0; i < other.length; i++) {
+            for (int x = 0; x < other[i].length; x++) {
+                if (!(myArray[i][x].equals(other[i][x]))) {
+                    return false;
+                }
+                
+            }
+        }
+        
+        
+        
+        return true;
+    }
+
+}
