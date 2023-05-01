@@ -1,0 +1,57 @@
+//DragonTester.java
+public class DragonTester
+{
+    public static void main(String[] args)
+    {
+        // Create a Dragon here to test out the Dragon class!
+        Dragon john = new Dragon(15, "Rage");
+        
+        System.out.println(john.toString());
+        System.out.println(john.fight());
+    }
+}
+
+
+//Dragon.java
+public class Dragon 
+{
+    private String attack;
+    private int level;
+    
+    // Write the constructor here!
+    public Dragon(int xLevel, String xAttack)
+    {
+        attack = xAttack;
+        level = xLevel;
+    }
+    
+    // Put getters here
+    
+    public int getLevel()
+    {
+        return level;
+    }
+    
+    public String getAttack()
+    {
+        return attack;
+    }
+    
+    // Put other methods here
+    
+    public String fight()
+    {
+        String fight = "";
+        for (int i = level; i > 0; i--)
+        {
+            fight += attack;
+        }
+        return fight;
+    }
+
+    // String representation of the object
+    public String toString()
+    {
+        return "Dragon is at level " + level + " and attacks with " + attack;
+    }
+}
