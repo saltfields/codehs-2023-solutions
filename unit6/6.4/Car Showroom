@@ -1,0 +1,155 @@
+//CarShowroom.java
+public class CarShowroom 
+{
+   public static void main (String[] args)
+   {
+     CarShowroom showroom = new CarShowroom(7);
+     showroom.spaces[0] = new CarModel("Mustang", 157);
+     showroom.spaces[1] = new CarModel("Camaro",155);
+     showroom.spaces[3] = new CarModel("Corvette", 194);
+     showroom.spaces[6] = new CarModel("Porsche", 210);
+
+     // print out what is in the showroom
+     System.out.println(showroom);
+
+     // test output
+     System.out.println("Index of Mustang should be 0 and is " +
+                        showroom.findCarSpace("Mustang"));
+     System.out.println("Index of Corvette should be 3 and is " +
+                        showroom.findCarSpace("Corvette"));
+     System.out.println("Index of Miata should be -1 and is " +
+                        showroom.findCarSpace("Miata"));
+                        
+     
+     System.out.println("\nOriginal Car Showroom:");
+     System.out.println(showroom);
+     showroom.consolidate();
+     System.out.println("Car Showroom after cars have been consolidated:");
+     System.out.println(showroom);
+   }
+   
+   private CarModel[] spaces;
+   private int numSpaces;
+
+   // constructor for number of spaces in showroom
+   public CarShowroom(int numParkingSpaces)
+   {
+     spaces = new CarModel[numParkingSpaces];
+     numSpaces = numParkingSpaces;
+   }
+
+   // Returns index of space that contains the car with the specified model
+   // and -1 if no car in the showroom is that model.No two cars in the showroom are the same model.
+
+   public int findCarSpace(String name)
+   {
+        // your code goes here
+        for (int i = 0; i < numSpaces; i++)
+        {
+            if (spaces[i] == null)
+            {
+                continue;
+            }
+            else if (spaces[i].getName().equals(name))
+            {
+                return i;
+            }
+        }
+        return -1;
+   }
+   
+   // Consolidates cars in the showroom so that there are no gaps
+   // in the parking spaces so that it's easier to move new models in
+   
+   public void consolidate()
+   { 
+       // your code goes here
+    for (int c = 0; c < numSpaces; c++)
+    {
+       int findNull = -1;
+       int findCar = -1;
+       
+       for (int i = 0; i < numSpaces; i++)
+       {
+           if (spaces[i] == null && findNull == -1)
+           {
+               findNull = i;
+           }
+           if (findNull != -1 && spaces[i] != null && findCar == -1)
+           {
+               findCar = i;
+           }
+       }
+       
+       if (findCar != -1)
+       {
+       String movedCarName = spaces[findCar].getName();
+       int movedCarSpeed = spaces[findCar].getSpeed();
+       
+       spaces[findNull] = new CarModel(movedCarName, movedCarSpeed);
+       
+       spaces[findCar] = null;
+       }
+    }
+   }
+
+   public String toString()
+   {
+     String result = "";
+     CarModel sp = null;
+     
+     // iterate through the spaces
+     for (int i = 0; i < spaces.length; i++) 
+     {
+       sp = spaces[i];
+       result = result + "Space " + i + " has a ";
+       
+       // locate empty spaces
+       if (sp == null)
+       {
+            result = result + " null \n";
+       }
+       else result = result + sp.toString() + "\n";
+     }
+     return result;
+   }
+}
+
+
+//CarModel.java
+class CarModel 
+{
+   private String name;
+   private int speed;
+
+   public CarModel(String theName, int theSpeed)
+   {
+      this.name = theName;
+      this.speed = theSpeed;
+   }
+
+   public String getName() 
+   { 
+       return this.name;
+   }
+
+   public int getSpeed() 
+   { 
+       return this.speed; 
+   }
+   
+   public void changeName(String newName)
+   {
+       name = newName;
+   }
+
+    public void changeSpeed(int newSpeed)
+   {
+       speed = newSpeed;
+   }
+
+   public String toString()
+   {
+      return this.name + " with a top speed of " + this.speed;
+   }
+}
