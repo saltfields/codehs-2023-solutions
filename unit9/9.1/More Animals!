@@ -1,0 +1,98 @@
+//Pet.java
+public class Pet extends Animal
+{
+    
+   public String size;
+   
+   public String getSize() {
+       return size;
+   }
+   
+   public void setSize(String size) {
+       this.size = size;
+   }
+   public String name;
+   
+   public String getName() {
+       return name;
+   }
+   
+   public void setName(String name) {
+       this.name = name;
+   
+        }
+    
+}
+
+
+//Fish.java
+public class Fish extends Pet
+{
+    
+   public String waterType;
+   
+   public String waterType() {
+       return waterType;
+   }
+   
+   public void setWaterType(String waterType) {
+       this.waterType = waterType;
+   }
+   
+
+    
+}
+
+
+//Dog.java
+public class Dog extends Pet
+{
+   
+   public boolean trained = false;
+   
+   public boolean getTrained() {
+       return trained;
+   }
+   
+   public void setTrained(boolean trained) {
+       this.trained = trained;
+   }
+   
+
+   
+}
+
+
+//AnimalTester.java
+public class Dog extends Pet
+{
+   
+   public boolean trained = false;
+   
+   public boolean getTrained() {
+       return trained;
+   }
+   
+   public void setTrained(boolean trained) {
+       this.trained = trained;
+   }
+   
+
+   
+}
+
+
+Animal.java
+public class Animal
+{
+   public String type;
+   
+   public String getType() {
+       return type;
+   }
+   
+   public void setType(String type) {
+       this.type = type;
+   }
+   
+}
