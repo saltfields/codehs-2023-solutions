@@ -1,0 +1,81 @@
+//ActivityTracker.java
+public class ActivityTracker
+{
+    public static void main(String[] args)
+    {
+        ActivityLog mylog = new ActivityLog();
+        
+        mylog.addMiles(5);
+        mylog.addHours(1);
+        
+        System.out.print("Total Miles: ");
+        System.out.println(mylog.getMiles());
+        
+        double hoursToday = mylog.getHours();
+        
+        mylog.addHours(1.5);
+        mylog.addHours(3);
+        
+        double increase = mylog.getHours() - hoursToday;
+        
+        System.out.print("There are ");
+        System.out.print(increase);
+        System.out.println(" more hours today than two days ago");
+    }
+}
+
+
+//ActivityLog.java
+public class ActivityLog
+{
+    private double numHours;
+    private double numMiles;
+    
+    public ActivityLog()
+    {
+        numHours = 0;
+        numMiles = 0;
+        /**
+         * creates activity log
+         * @return: none
+         **/
+    }
+    
+    public void addHours(double hours)
+    {
+        numHours += hours;
+        /**
+         * adds hours inputted to total hours
+         *@return: none
+         **/
+    }
+    
+    public void addMiles(double miles)
+    {
+        numMiles += miles;
+        /**
+         * adds miles inputted to total miles
+         * @return: none
+         *
+         **/
+    }
+    
+    public double getMiles()
+    {
+        return numMiles;
+        /**
+         * returns miles
+         * @return: numMiles
+         **/
+    }
+    
+    public double getHours() 
+    {
+        return numHours;
+        /**
+         * returns hours
+         * @return: numHours
+         **/
+    }
+    
+}
