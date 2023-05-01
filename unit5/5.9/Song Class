@@ -1,0 +1,113 @@
+//SongTester.java
+public class SongTester
+{
+    public static void main(String[] args)
+    {
+        // Start here!
+        Song dancingqueen = new Song("ABBA", "Dancing Queen", 3, 54);
+        Song rocknroll = new Song("Bruce Springsteen", "The Heart of Rock and Roll", 5, 14);
+        Song heart = new Song("Huey Lewis & the News", "The Heart of Rock and Roll", 4, 59);
+        
+        System.out.println("artist= " + dancingqueen.getArtist());
+        System.out.println("title= " + dancingqueen.getTitle());
+        System.out.println("Time= " + dancingqueen.getMinutes() + ":" + dancingqueen.getSeconds());
+        
+        System.out.println("artist= " + rocknroll.getArtist());
+        System.out.println("title= " + rocknroll.getTitle());
+        System.out.println("Time= " + rocknroll.getMinutes() + ":" + rocknroll.getSeconds());
+        
+        System.out.println("artist= " + heart.getArtist());
+        System.out.println("title= " + heart.getTitle());
+        System.out.println("Time= " + heart.getMinutes() + ":" + heart.getSeconds());
+    }
+}
+
+
+//Song.java
+public class Song
+{
+    private String artist;
+    private String title;
+    private int minutes;
+    private int seconds;
+
+    public Song(String artist, String title, int minutes, int seconds){
+      this.artist = artist;
+      this.title = title;
+      this.minutes = minutes;
+      this.seconds = seconds;
+    }
+
+	/**
+	* Returns value of artist
+	* @return artist
+	*/
+	public String getArtist() {
+        return this.artist;
+	}
+
+	/**
+	* Sets new value of artist
+	* @param artist Updated artist
+	*/
+	public void setArtist(String artist) {
+	    this.artist = artist;
+	}
+
+	/**
+	* Returns value of title
+	* @return title
+	*/
+	public String getTitle() {
+	    return this.title;
+	}
+
+	/**
+	* Sets new value of title
+	* @param title Updated title
+	*/
+	public void setTitle(String title) {
+	    this.title = title;
+	}
+
+	/**
+	* Returns value of minutes
+	* @return minutes
+	*/
+	public int getMinutes() {
+	    return this.minutes;
+	}
+
+	/**
+	* Sets new value of minutes
+	* @param minutes Updated minutes
+	*/
+	public void setMinutes(int minutes) {
+	    this.minutes = minutes;
+	}
+
+	/**
+	* Returns value of seconds
+	* @return seconds
+	*/
+	public int getSeconds() {
+	    return this.seconds;
+	}
+
+	/**
+	* Sets new value of seconds
+	* @param seconds Updated seconds
+	*/
+	public void setSeconds(int seconds) {
+		this.seconds = seconds;
+	}
+
+	/**
+	* Create string representation of Song for printing
+	* @return String of the song
+	*/
+	@Override
+	public String toString() {
+		return "artist= " + artist + "\ntitle= " + title + "\nTime= " + minutes + ":" + seconds;
+	}
+}
