@@ -1,0 +1,85 @@
+//PieTester.java
+import java.util.ArrayList;
+
+public class PieTester
+{
+    public static void main(String[] args)
+    {
+        // Start here!
+        ApplePie apple = new ApplePie(8);
+        PecanPie pecan = new PecanPie(6, "he");
+        Pie rubarb = new Pie("Rubarb", 12);
+        ArrayList pies = new ArrayList(3);
+        System.out.println(pecan.getSlices() + " slice " + pecan.getType() + " pie");
+        System.out.println(apple.getSlices() + " slice " + apple.getType() + " pie");
+        System.out.println(rubarb.getSlices() + " slice " + rubarb.getType() + " pie");
+    }
+}
+
+
+//Pie.java
+public class Pie {
+
+    private String type;
+    private int slices;
+    
+    public Pie (String type, int slices) {
+        this.type = type;
+        this.slices = slices;
+    }
+    
+    public int getSlices (){
+        return slices;
+    }
+    
+    public void eatSlice(){
+        slices --;
+    }
+    
+    public String getType(){
+        return type;
+    }
+}
+
+
+//PecanPie.java
+public class PecanPie extends Pie {
+    
+    private String syrupType;
+
+    public PecanPie (int slices, String syrupType) 
+    {
+        super("Pecan", slices);
+        this.syrupType = syrupType;
+    }
+    
+    public String getSyrupType()
+    {
+        return syrupType;
+    }
+    
+}
+
+
+//ApplePie.java
+public class ApplePie extends Pie {
+
+    public ApplePie (int slices) 
+    {
+        super("Apple", slices);
+    }
+    
+    public boolean hasSlice()
+    {
+        return super.getSlices() > 0;
+    }
+    
+    @Override
+    public void eatSlice()
+    {
+        if (this.hasSlice())
+        {
+        	super.eatSlice();
+        }
+    }
+}
