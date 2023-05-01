@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class CastingToDouble
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("First Int: ");
+        int firstInt = input.nextInt();
+        System.out.println("Second Int: ");
+        int secondInt = input.nextInt();
+        double div = (double)firstInt / (double)secondInt;
+        System.out.print(div);
+        
+
+    }
+}
