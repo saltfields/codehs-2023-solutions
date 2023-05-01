@@ -1,0 +1,70 @@
+//NumberGames.java
+public class NumberGames
+{
+    
+    // Keep track of the number
+    public double num;
+    
+    // Constructor
+    public NumberGames(double startingNumber)
+    {
+        num = startingNumber;
+    }
+    
+    // Returns the number
+    public double getNumber()
+    {
+        return num;
+    }
+    
+    // Doubles the number
+    // Returns the doubled number
+    public double doubleNumber()
+    {
+        num *= 2;
+        return num;
+    }
+    
+    // Squares the number
+    // Returns the squared number
+    public double squareNumber()
+    {
+        num *= num;
+        return num;
+    }
+    
+    public double printNumber()
+    {
+        System.out.println(num);
+        return num;
+    }
+    
+}
+
+
+//GamesTester.java
+public class GamesTester
+{
+    public static void main(String[] args)
+    {
+        NumberGames game = new NumberGames(5);
+        
+        
+        
+        double hi = game.squareNumber();
+        System.out.println(hi);
+        
+        hi = game.doubleNumber();
+        System.out.println(hi);
+        
+        hi = game.squareNumber();
+        System.out.println(hi);
+        
+      hi = game.getNumber();
+        System.out.println(hi);
+        
+        hi = game.getNumber();
+        System.out.println(hi);
+        
+    }
+}
