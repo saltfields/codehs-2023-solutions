@@ -1,0 +1,112 @@
+//RoutineTester.java
+public class RoutineTester
+{
+    public static void main(String[] args) 
+    {
+        Routine myWeek = new Routine();
+        
+        myWeek.setSchool(8);
+        myWeek.setHobbies(2);
+        myWeek.setFriends(2.5);
+        myWeek.setSleep(8);
+        
+        // Prints the totals for the WHOLE WEEK
+        System.out.println("How You Spend Your Week");
+        System.out.println("At School: " + (myWeek.getSchool() * 7));
+        System.out.println("Sleeping: " + (myWeek.getSleep() * 7));
+        System.out.println("With Friends: " + (myWeek.getFriends() * 7));
+        System.out.println("Doing fun stuff: " + (myWeek.getHobbies() * 7));
+        myWeek.printTotal();
+        
+    }
+}
+
+
+//Routine.java
+public class Routine
+{
+    private double school;
+    private double sleep;
+    private double friends;
+    private double hobbies;
+    
+    public Routine()
+    {
+        school = 0;
+        sleep = 0;
+        friends = 0;
+        hobbies = 0;
+    }
+    
+    public Routine(double getSchool, double getSleep, double getFriends, double getHobbies)
+    {
+        school = getSchool;
+        sleep = getSleep;
+        friends = getFriends;
+        hobbies = getHobbies;
+    }
+    
+    public double getSchool()
+    {
+        return school;
+    }
+    public double getSleep()
+    {
+        return sleep;
+    }
+    public double getFriends()
+    {
+        return friends;
+    }
+    public double getHobbies()
+    {
+        return hobbies;
+    }
+    
+    public void setSchool(double setSchool)
+    {
+        school = setSchool;
+    }
+    public void setSleep(double setSleep)
+    {
+        sleep = setSleep;
+    }
+    public void setFriends(double setFriends)
+    {
+        friends = setFriends;
+    }
+    public void setHobbies(double setHobbies)
+    {
+        hobbies = setHobbies;
+    }
+    
+     public void printTotal()
+    {
+        double grandTotal = sleep + school + friends + hobbies;
+        
+        
+        System.out.println("How You Spend Your Week");
+        if(school != 0)
+        {
+            System.out.println("At School: " + school*7);
+        }  
+        if (sleep != 0) 
+        {
+            System.out.println("Sleeping: " + sleep*7);
+        }  
+        if (friends != 0) 
+        {
+            System.out.println("With Friends: " + friends*7);
+        }  
+        if (hobbies != 0) 
+        {
+            System.out.println("Doing fun stuff: " + hobbies*7);
+        }  
+        if (grandTotal != 0) 
+        {
+            System.out.println("You're busy " + grandTotal*7 + " hours a week!");
+        }  
+        
+        
+    }
+}
