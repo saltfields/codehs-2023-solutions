@@ -1,0 +1,50 @@
+//SalutationsTester.java
+public class SalutationsTester
+{
+    public static void main(String[] args)
+    {
+        
+        Salutations sal = new Salutations("Karel");
+        
+        sal.addressLetter();
+        
+        sal.signLetter();
+        
+        sal.addressMemo();
+        
+        sal.signMemo();
+    }
+}
+
+
+//Salutations.java
+public class Salutations {
+
+String yourName = "Karel";
+
+    
+    public Salutations(String name) {
+        
+        String yourName = name;
+    }
+        
+        public void addressLetter(){
+        System.out.println("Dear " + yourName);
+    }
+            
+        public void signLetter(){
+        System.out.println("Sincerely, ");
+        System.out.println(yourName);
+    }
+            
+        public void addressMemo(){
+        System.out.println("To whom it may concern");
+    }
+        
+        public void signMemo(){
+        System.out.println("Best,");
+        System.out.println(yourName);
+    }
+        
+    
+    }
