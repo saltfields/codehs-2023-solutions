@@ -1,0 +1,61 @@
+import java.util.ArrayList;
+
+import java.util.Scanner;
+
+public class RecursiveMin {
+
+   public static void main(String[] args)
+
+   {
+
+       Scanner input = new Scanner(System.in);
+
+       ArrayList<Integer> m = new ArrayList<Integer>();
+
+       while (true){
+
+           System.out.println("Enter the numbers. Enter -1 to exit: ");
+
+           int n = input.nextInt();
+
+           if (n == -1){
+
+               break;
+
+           }
+
+           else {
+
+               m.add(n);
+
+           }
+
+       }
+
+       int minimum = findMinimum(m);
+
+       System.out.println("Minimum: " + minimum);
+
+   }
+
+   public static int findMinimum(ArrayList<Integer> m){
+
+       return findMin(m, m.size());
+
+   }
+
+     public static int findMin(ArrayList<Integer> m, int len) {
+
+   if (len == 1)
+
+   {
+
+       return m.get(0);
+
+   }
+
+   return Math.min(m.get(len-1), findMin(m, len-1));
+
+}
+
+   }
