@@ -1,0 +1,84 @@
+//StudentTester.java
+public class StudentTester
+{
+    public static void main(String[] args)
+    {
+        
+        /**
+         * Create a student with id # 123987, GPA: 2.56
+         */
+         
+         
+         /**
+         * Create a student athlete with id # 987456, GPA: 3.47,
+         * who plays lacrosse for the varsity team 
+         */
+         
+         
+         // Print out both objects
+         
+    }
+}
+
+
+//StudentAthlete.java
+public class StudentAthlete extends Student
+{
+    private String sport;
+    private String level;
+    
+   // Add the constructor here
+   public StudentAthlete(String name, int id, double gpa, String sport, String level) {
+       super(name, id, gpa);
+       this.sport = sport;
+       this.level = level;
+   }
+   
+   
+   public String getSport(){
+       return sport;
+   }
+   
+   public String getLevel(){
+       return level;
+   }
+   
+   
+    @Override
+    public String toString(){
+        return super.toString() + " plays " + sport;
+    }
+}
+
+
+//Student.java
+public class Student
+{
+    private String name;
+    private int id;
+    private double gpa;
+    
+   // Constructor goes here
+   public Student(String name, int id, double gpa) {
+       this.name = name;
+       this.id = id;
+       this.gpa = gpa;
+   }
+   
+   
+    public String getName(){
+       return name;
+    }
+   
+    public int getID(){
+       return id;
+    }
+    
+    public double getGPA(){
+        return gpa;
+    }
+   
+    public String toString(){
+        return name + " (" + id + ")";
+    }
+}
