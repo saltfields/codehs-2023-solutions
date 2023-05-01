@@ -1,0 +1,129 @@
+//Mystery.java
+public class Mystery extends Book
+{
+    
+    
+    
+    
+    
+    public void setPages(int pages) {
+        this.pages = pages;
+    }
+    
+    public String getSubgenre() {
+        return subgenre;
+    }
+    
+    public void setSubgenre(String subgenre) {
+        this.subgenre = subgenre;
+    }
+    
+    public String getAuthor() {
+        return author;
+    }
+    
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+    
+   
+    
+    
+    public void setTitle(String title){
+        this.title = title;
+    }
+    
+}
+
+
+//Encyclopedia.java
+public class Encyclopedia extends Book
+{
+    
+    
+    
+    public int getArticles(){
+        return articles;
+    }
+    
+    public void setArticles(int numArticles){
+        articles = numArticles;
+    }
+
+    
+    
+    public void setPages(int pages) {
+        this.pages = pages;
+    }
+    
+    public String getStartLetter(){
+        return startLetter;
+    }
+    
+    public void setStartLetter(String startLetter){
+        this.startLetter = startLetter;
+    }
+    
+    public String getEndLetter(){
+        return endLetter;
+    }
+    
+    public void setEndLetter(String endLetter){
+        this.endLetter = endLetter;
+    }
+    
+    
+
+    public void setTitle(String title){
+        this.title = title;
+    }
+    
+}
+
+
+//BookTester.java
+public class BookTester
+{
+    public static void main(String[] args)
+    {
+        Mystery oneIsLying = new Mystery();
+        
+        oneIsLying.setPages(374);
+        oneIsLying.setTitle("One of Us Is Lying");
+        oneIsLying.setAuthor("Karen M. McManu");
+        oneIsLying.setSubgenre("Crime Mystery");
+        
+        
+        Encyclopedia britannica = new Encyclopedia();
+        britannica.setPages(1009);
+        britannica.setTitle("Original Encyclopedia Britannica, Vol. 3");
+        britannica.setArticles(30);
+        britannica.setStartLetter("C");
+        britannica.setEndLetter("L");
+        
+        
+        System.out.println(oneIsLying.getTitle());
+        System.out.println(britannica.getTitle());
+    }
+}
+
+
+//Book.java
+public class Book
+{
+    public int articles;
+    public int pages;
+    public String startLetter;
+    public String endLetter;
+    public String title;
+    public String subgenre;
+    public String author;
+public int getPages() {
+        return pages;
+    }
+    public String getTitle(){
+        return title;
+    }
+    
+    
+}
