@@ -1,0 +1,89 @@
+//DataPurgeTester.java
+import java.util.ArrayList;
+
+public class DataPurgeTester
+{
+    public static void main(String[] args)
+    {
+        ArrayList<String> members = new ArrayList<String>();
+        addMembers(members);
+        System.out.println("All names formatted correctly? " + DataPurge.correctlyFormatted(members));
+        DataPurge.removeName(members, "Araceli Castaneda");
+        DataPurge.removeDuplicates(members);
+        System.out.println(members);
+    }
+    
+    
+    
+    public static void addMembers(ArrayList<String> emails)
+    {
+        emails.add("London Braun");
+        emails.add("Jaslyn Chavez");
+        emails.add("Daphne Kane");
+        emails.add("Aden Brock");
+        emails.add("Jaime Wolf");
+        emails.add("finley Wood");
+        emails.add("Trent maynard");
+        emails.add("Jaiden Krause");
+        emails.add("London Braun");
+        emails.add("Jaiden Krause");
+        emails.add("Davon Mccormick");
+        emails.add("JosieFreeman");
+        emails.add("Jaslyn Chavez");
+        emails.add("Zaiden Harding");
+        emails.add("Araceli Castaneda");
+        emails.add("Jaime Wolf");
+        emails.add("London Braun");
+        
+    }
+}
+
+
+//DataPurge.java
+import java.util.*;
+
+public class DataPurge
+{
+ 
+    public static void removeDuplicates(ArrayList<String> people) {
+        int size = people.size();
+        for (int i = 0; i < size; i++) {
+            for (int j = i + 1; j < size; j++) {
+                if (people.get(i).equals(people.get(j))) {
+                    System.out.println(people.get(i));
+                    people.remove(j);
+                    size--;
+                }
+            }
+        }
+    }
+    
+    public static void removeName(ArrayList<String> people, String search) {
+        Iterator<String> iterator = people.iterator();
+        while (iterator.hasNext()) {
+            String name = iterator.next();
+            if (name.contains(search)) {
+                iterator.remove();
+                System.out.println("Removed: " + name);
+            }
+        }
+        
+    }
+    
+    public static boolean correctlyFormatted(ArrayList<String> people) {
+        for (String name : people) {
+            String[] splitName = name.split(" ");
+            if (splitName.length != 2) {
+                return false;
+            }
+            if (!Character.isUpperCase(splitName[0].charAt(0)) || !Character.isUpperCase(splitName[1].charAt(0))) {
+                return false;
+            }
+        }
+        return true;
+        
+    
+        
+    }
+    
+}
