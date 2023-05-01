@@ -1,0 +1,94 @@
+//ElectricCar.java
+public class ElectricCar extends Car {
+
+    // Complete the constructor
+    // Note we're reinterpreting "fuelLevel" as "batteryLevel"
+    public ElectricCar(String model, int batteryLevel){
+       super(model, batteryLevel);
+    }
+
+    // Override getFuelLevel
+    // Reinterprets fuelLevel() as a percentage
+    // Remember super.getFuelLevel will return fuelLevel!
+    public double getFuelLevel() {
+        return super.getFuelLevel() / 100;
+    }
+
+    // Override milesLeft
+    // Takes one parameter - the total number of miles an ElectricCar
+    // gets on a full charge.
+    // Computes miles left by interpreting fuelLevel as the
+    // battery percentage left in the car
+    
+    
+    public double milesLeft(double chargeMiles){
+        return getFuelLevel() * chargeMiles;
+    }
+    // Override toString
+    // Should print: model electric car
+    public String toString() {
+        return super.getModel() + " electric car";
+    }
+    
+}
+
+
+//CarTester.java
+public class CarTester
+{
+    public static void main(String[] args)
+    {
+        // Create a Car object
+        Car car = new Car("Ford", 21);
+        // Print out the model
+        System.out.println(car.getModel());
+        // Print out the fuelLevel
+        System.out.println(car.getFuelLevel());
+        // Print how many miles are left with 23 mpg
+        System.out.println(car.milesLeft(23));
+        // Print the object
+        System.out.println(car);
+        // Create an ElectricCar object
+        ElectricCar elecCar = new ElectricCar("Tesla", 23);
+        // Print out the model
+        System.out.println(elecCar.getModel());
+        // Print out the fuelLevel
+        System.out.println(elecCar.getFuelLevel());
+        // Print how many miles are left with 400 miles per charge
+        System.out.println(elecCar.milesLeft(400));
+        // Print the object
+        System.out.println(elecCar);
+    }
+}
+
+
+//Car.java
+public class Car {
+    
+    // This code is complete
+    private String model;
+    private int fuelLevel;
+    
+    public Car(String model, int fuelLeft){
+        this.model = model;
+        this.fuelLevel = fuelLeft;
+    }
+    
+    public String getModel(){
+        return model;
+    }
+    
+    public double getFuelLevel(){
+        return fuelLevel;
+    }
+    
+    // Returns how many more miles the car can go
+    // with the fuel left
+    public double milesLeft(double mpg){
+        return fuelLevel * mpg;
+    }
+    
+    public String toString(){
+        return model + " car";
+    }
+}
