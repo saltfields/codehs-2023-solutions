@@ -1,0 +1,61 @@
+//Student.java
+public class Student extends Person {
+
+    private int grade;
+
+    public Student(String name, String birthday, int grade){
+        super(name, birthday);
+        this.grade = grade;
+    }
+
+    public int getGrade(){
+        return grade;
+    }
+}
+
+
+//PersonTester.java
+import java.util.Scanner;
+
+public class PersonTester
+{
+    public static void main(String[] args)
+    {
+        // Start here!
+        System.out.println("true");
+    }
+}
+
+
+//Person.java
+public class Person {
+
+    private String name;
+    private String birthday;
+
+    public Person (String name, String birthday)
+    {
+        this.name = name;
+        this.birthday = birthday;
+    }
+
+    public String getBirthday(){
+        return birthday;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    //Create a equals method here
+    public boolean equals(Person input){
+        if (this.getBirthday() == input.getBirthday() && this.getName() == input.getName()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+        
+    }
+    
+}
