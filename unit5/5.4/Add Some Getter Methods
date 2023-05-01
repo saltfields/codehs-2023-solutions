@@ -1,0 +1,54 @@
+//Messages.java
+public class Messages
+{
+    public static void main(String[] args)
+    {
+        // Your code here.
+        // Create two Comment objects and print them out.
+        // Then use the accessor methods to print out the instance variables
+        Comment com1 = new Comment("John", "Hi", "May");
+        Comment com2 = new Comment("Joe", "Hey", "June");
+        
+        System.out.println(com1.toString());
+        System.out.println(com2.toString());
+        
+        System.out.println(com1.getComment());
+        System.out.println(com2.getDate());
+    }
+}
+
+
+//Comment.java
+public class Comment
+{
+    private String poster;
+    private String comment;
+    private String date;
+    
+    public Comment(String personPosting, String message, String commentDate)
+    {
+        poster = personPosting;
+        comment = message;
+        date = commentDate;
+    }
+    
+    public String getPoster()
+    {
+        return poster;
+    }
+    
+    public String getComment()
+    {
+        return comment;
+    }
+    
+    public String getDate()
+    {
+        return date;
+    }
+    
+    public String toString()
+    {
+        return comment + "\n--" + poster + "(" + date + ")";
+    }
+}
