@@ -1,0 +1,70 @@
+//FractionTester.java
+import java.util.Scanner;
+
+public class FractionTester
+{
+    public static void main(String[] args)
+    {
+        
+        Scanner input = new Scanner(System.in);
+        
+        Fraction half = new Fraction(1, 2);
+        
+        System.out.println("Enter the numerator: ");
+        
+        int numerator = input.nextInt();
+        
+        System.out.println("Enter the denominator: ");
+        
+        int denominator = input.nextInt();
+        
+         Fraction frac = new Fraction(numerator, denominator);
+        
+        // Add the fractions
+        // Make use of the getDenominator and getNumerator methods
+        System.out.println(half.getNumerator() + "/" + half.getDenominator() + " + " + frac.getNumerator() + "/" + frac.getDenominator() + " = " + ((half.getNumerator() * frac.getDenominator()) + (half.getDenominator() * frac.getNumerator()) + "/" + (half.getDenominator() * frac.getDenominator())));
+        
+        // Print out the fractions as an equation
+        // Remember you don't have to call toString yourself!
+        
+        
+    }
+}
+
+
+//Fraction.java
+public class Fraction
+{
+    private int numerator;
+    private int denominator;
+    
+    public Fraction(int numer, int denom)
+    {
+        numerator = numer;
+        denominator = denom;
+    }
+    
+    // Returns the numerator
+    public int getNumerator()
+    {
+        return numerator;
+    }
+    
+    // Returns the denominator
+    public int getDenominator()
+    {
+        return denominator;
+    }
+    
+    
+    // Returns a string representing a fraction
+    // in the form
+    // numerator/denominator
+    public String toString()
+    {
+        String done = (numerator + "/" + denominator);
+        return done;
+    }
+    
+    
+}
