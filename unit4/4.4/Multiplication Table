@@ -1,0 +1,28 @@
+public class MultiplicationTable
+{
+    public static void main(String[] args)
+    {
+        // Call makeMultiplicationTable 
+       makeMultiplicationTable();
+    }
+    
+    // Makes a multiplcation table
+    public static void makeMultiplicationTable()
+    {
+        for (int i = 1; i <= 10; i++)
+        {
+            for (int f = 1; f <= 10; f++)
+            {
+                if (i * f < 10)
+                {
+                    System.out.print((i * f) + " \t");
+                }
+                else if (i * f >= 10)
+                {
+                    System.out.print((i * f) + "\t");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
