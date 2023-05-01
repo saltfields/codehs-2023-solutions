@@ -1,0 +1,192 @@
+//Test.java
+public class Test extends Assignment 
+{
+    private String testType;
+    
+    public Test(String name, String dueDate, double availablePoints, double earnedPoints, String testType) {
+        super(name, dueDate, availablePoints, earnedPoints);
+        this.testType = testType;
+    }
+    
+    public String getTestType() {
+        return testType;
+    }
+    
+    public void setTestType(String newTT) {
+        testType = newTT;
+    }
+    
+    public String getName() {
+        return super.getName();
+    }
+    
+     public String getDueDate() {
+        return super.getDueDate();
+    }
+    
+    public double getAvailablePoints() {
+        return super.getAvailablePoints();
+    }
+    
+    public double getEarnedPoints() {
+        return super.getEarnedPoints();
+    }
+}
+
+
+//Project.java
+public class Project extends Assignment 
+{
+    private boolean groups;
+    private boolean presentation;
+    
+    public Project(String name, String dueDate, double availablePoints, double earnedPoints, boolean hasGroups, boolean hasPresentation) {
+        super(name, dueDate, availablePoints, earnedPoints);
+        groups = hasGroups;
+        presentation = hasPresentation;
+    }
+    
+    public boolean hasGroups() {
+        return groups;
+    }
+    
+    public boolean hasPresentation() {
+        return presentation;
+    }
+    
+    public void setGroups(boolean newGroups) {
+        groups = newGroups;
+    }
+    
+    public void setPresentation(boolean newPresentation) {
+        presentation = newPresentation;
+    }
+}
+
+
+//AssignmentRunner.java
+import java.util.*;
+
+public class AssignmentRunner {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        
+        ArrayList<Assignment> list = new ArrayList<Assignment>();
+        
+        boolean ongoing = true;
+        
+        
+        
+        while (ongoing) {
+            System.out.println("Enter the assignment's name (exit to quit): ");
+            
+            String aName = input.nextLine();
+            
+            if (aName.equals("exit")) {
+                ongoing = false;
+                break;
+            }
+            
+            System.out.println("Enter the due date: ");
+            
+            String aDueDate = input.nextLine();
+            
+            System.out.print("How many points is the assignment worth?");
+            
+            
+            
+            double aAvailablePoints = input.nextDouble();
+            
+            
+            
+            System.out.print("How many points were earned?");
+            
+            
+            
+            double aEarnedPoints = input.nextDouble();
+            
+            input.nextLine();
+            
+            System.out.println("Is this a (T)est or a (P)roject?");
+            
+            String type = input.nextLine();
+            
+            if (type.equals("P")) {
+                System.out.println("Does this project require (true/false) ... \nGroups?");
+                
+                String pGroups = input.nextLine();
+                boolean pGroup = false;
+                
+                if (pGroups.equals("true")) {
+                    pGroup = true;
+                }
+                
+                System.out.println("A presentation?");
+                
+                String pPresentation = input.nextLine();
+                boolean pPresent = false;
+                
+                if (pPresentation.equals("true")) {
+                    pPresent = true;
+                }
+                
+                Assignment test = new Project(aName, aDueDate, aAvailablePoints, aEarnedPoints, pGroup, pPresent);
+                
+                list.add(test);
+            } else {
+                System.out.println("What type of test is it?");
+                
+                String tType = input.nextLine();
+                
+                Assignment test1 = new Test(aName, aDueDate, aAvailablePoints, aEarnedPoints, tType);
+                
+                list.add(test1);
+            }
+        }
+        printSummary(list);
+
+    }
+
+    // Print due date and score percentage on the assignment
+    public static void printSummary(ArrayList<Assignment> assignments) {
+       
+       for (int i = 0; i < assignments.size(); i++) {
+           System.out.println(assignments.get(i).getName() + " - " + (assignments.get(i).getEarnedPoints() / assignments.get(i).getAvailablePoints()) * 100);
+       }
+    }
+}
+
+
+//Assignment.java
+public class Assignment
+{
+    private String name;
+    private String dueDate;
+    private double availablePoints;
+    private double earnedPoints;
+    
+    public Assignment(String name, String dueDate, double availablePoints, double earnedPoints) {
+        this.name = name;
+        this.dueDate = dueDate;
+        this.availablePoints = availablePoints;
+        this.earnedPoints = earnedPoints;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public String getDueDate() {
+        return dueDate;
+    }
+    
+    public double getAvailablePoints() {
+        return availablePoints;
+    }
+    
+    public double getEarnedPoints() {
+        return earnedPoints;
+    }
+}
