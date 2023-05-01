@@ -1,0 +1,15 @@
+What was wrong with the program?
+The main issue I found was that for the odd numbers, it was checking OR when it should have been checking AND. I don't know if it was correct other than that, as I rewrote it to make sense to me.
+
+The other one seemed to have the same problem, as it didn't work half the time, but I rewrote it with an && symbol instead of || and it worked.
+
+
+
+What expression was the programmer trying to use that gave the error? Relate your answer to De Morgan's Laws.
+The || was the symbol they were trying to use that gave the error, when they should have been using the && symbol. This is because in order to check if two things are both right, you have to use the && symbol and not just the || symbol usually.
+
+
+
+How did you resolve the error?
+
+I rewrote the program with && symbols.
