@@ -1,0 +1,39 @@
+//TeamTester.java
+public class TeamTester
+{
+    public static void main(String[] args)
+    {
+        // Test out the Teams class here!
+    }
+}
+
+
+//Team.java
+public class Team
+{
+    // Static Variables
+    public static int totalTeams = 0;
+    public static int minTeams = 6;
+    // ...
+    
+    // Public Methods
+    public Team() 
+    {
+        // Some code here...
+        totalTeams += 1;
+    }
+    
+    // Static Methods 
+    public static boolean tournamentReady()
+    {
+        if (totalTeams >= minTeams)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    // ...
+}
