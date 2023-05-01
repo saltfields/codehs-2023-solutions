@@ -1,0 +1,27 @@
+public class AddFractions 
+{
+    public static void main(String[] args)
+    {
+        int numOne = 1; // numerator of 1st
+        int denOne = 3; // denominator of 1st
+        int numTwo = 3; // numerator of 2nd
+        int denTwo = 6; // denominator of 2nd
+        
+        int numSum = (numOne * denTwo) + (denOne * numTwo); // finding numerator of final answer
+        int numDen = denOne * denTwo; // finding denominator of final answer
+        
+        System.out.print("The sum of ");
+        System.out.print(numOne);
+        System.out.print("/");
+        System.out.print(denOne);
+        System.out.print(" + ");
+        System.out.print(numTwo);
+        System.out.print("/");
+        System.out.print(denTwo);
+        System.out.print(" = ");
+        System.out.print(numSum);
+        System.out.print("/");
+        System.out.print(numDen);
+        
+    }
+}
