@@ -1,0 +1,114 @@
+//TextBook.java
+public class TextBook extends Book
+{
+
+    private int edition;
+    private boolean isEbook;
+    
+    public TextBook(String title, String author, int edition, boolean isEbook) {
+        super(title, author);
+        this.edition = edition;
+        this.isEbook = isEbook;
+    }
+    
+    public boolean isEbook() {
+        return isEbook;
+    }
+    
+    public int getEdition() {
+        return edition;
+    }
+    
+    
+    @Override
+    public String toString() {
+        return "Textbook edition # " + edition;
+    }
+
+}
+
+
+//Novel.java
+public class Novel extends Book
+{
+    private int readingLevel;
+    private String genre;
+    
+    public Novel(String title, String author, int readingLevel, String genre) {
+        super(title, author);
+        this.readingLevel = readingLevel;
+        this.genre = genre;
+    }
+    
+    public String getGenre() {
+        return genre;
+    }
+    
+    public int getReadingLevel() {
+        return readingLevel;
+    }
+    
+    @Override
+    public String toString() {
+        return genre + " Novel";
+    }
+}
+
+
+//BookTester.java
+import java.util.ArrayList;
+
+public class BookTester
+{
+    public static void main(String[] args)
+    {
+        ArrayList<Book> list = new ArrayList<Book>();
+        
+        TextBook test1 = new TextBook("yes", "me", 1, false);
+        TextBook test2 = new TextBook("no", "you", 2, true);
+        TextBook test3 = new TextBook("maybe", "him", 3, true);
+        
+        Novel test4 = new Novel("tiger", "scot", 655, "Mystery");
+        Novel test5 = new Novel("cat", "john", 800, "Comedy");
+        Novel test6 = new Novel("dog", "jeff", 1220, "Biography");
+        
+        list.add(test1);
+        list.add(test2);
+        list.add(test3);
+        list.add(test4);
+        list.add(test5);
+        list.add(test6);
+        
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+            System.out.println(list.get(i).getTitle());
+            System.out.println(list.get(i).getAuthor());
+        }
+    }
+}
+
+
+//Book.java
+public class Book
+{
+    private String title;
+    private String author;
+    
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+    
+    public String getTitle() {
+        return title;
+    }
+    
+    public String getAuthor() {
+        return author;
+    }
+    
+    public String toString() {
+        return "Book: " + title;
+    }
+    
+}
