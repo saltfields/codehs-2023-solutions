@@ -1,0 +1,28 @@
+//ClassicCar.java
+public class ClassicCar
+{
+    String name;
+    String model;
+    int cost;
+    
+    public ClassicCar(String name, String model, int cost)
+    {
+        this.name = name;
+        this.model = model;
+        this.cost = cost;
+    }
+}
+
+
+//CarTracker.java
+import java.util.ArrayList;
+public class CarTracker
+{
+    public static void main(String[] args)
+    {
+        //Initialize your ArrayList here:
+        ClassicCar john = new ClassicCar("John", "Ford", 5);
+        ArrayList<ClassicCar> garage = new ArrayList<ClassicCar>();
+        garage.add(john);
+    }
+}
