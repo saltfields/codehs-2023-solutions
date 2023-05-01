@@ -1,0 +1,16 @@
+public class Employee
+{
+    private String fName;
+    private String lName;
+    private double salary;
+    private int hours;
+    
+    public Employee()
+{
+    fName = this.fName;
+    lName = this.lName;
+    salary = this.salary;
+    hours = this.hours;
+}
+    
+}
