@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class CYOA
+{
+    public static void main(String[] args)
+    {
+        // run or fight the monster
+        
+            //run
+            
+                // you get away but lose half your gold
+            
+            //fight
+            
+                // sword or potion
+                    
+                    // sword
+                    
+                        // you deal 10 damage
+                    
+                    // potion
+                    
+                        // healing or damage potion
+                        
+                            // healing
+                            
+                                // you regain 15 health
+                            
+                            // damage
+                            
+                                // you deal 15 damage
+    }
+}
