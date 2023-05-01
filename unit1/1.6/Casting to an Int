@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class CastingToInt
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a double: ");
+        double myDouble = input.nextDouble();
+        double origDouble = myDouble;
+        System.out.println(myDouble);
+        myDouble = (int)myDouble;
+        System.out.println(myDouble);
+        origDouble = (double)origDouble + 0.5;
+        System.out.println(origDouble);
+        myDouble = (int)origDouble;
+        System.out.print(myDouble);
+        
+    }
+}
