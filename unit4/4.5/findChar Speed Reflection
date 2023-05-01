@@ -1,0 +1,3 @@
+1. My method was more efficient since the time it took to run was less.
+2. My method was more efficient because it only has one execution where it checks if the string compares the character, compared to the other one where it checks one character at a time if that is the correct character.
+3. Efficiency in programming is important as it makes code easier to read and also means that lower-end systems can run programs that they otherwise wouldn't have been able to.
