@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Berries
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        // Ask for a berry 
+        System.out.println("Enter the first character of the name of the berry you want.");
+        String orderS = input.nextLine();
+        char order = orderS.charAt(0);
+        // Remember the Scanner object will take whole strings
+        // Extract the first character using charAt
+        // Remember that characters can be compared using == 
+        if (order == 'E')
+        {
+            System.out.println("You ordered Elderberry");
+        }
+        else if(order == 'G')
+        {
+            System.out.println("You ordered Gooseberry");
+        }
+        else if(order == 'L')
+        {
+            System.out.println("You ordered Lingonberry");
+        }
+        else
+        {
+            System.out.println("Berry not recognized");
+        }
+        // Use comments to list the different
+        // branches you will need before you write the code
+    }
+}
