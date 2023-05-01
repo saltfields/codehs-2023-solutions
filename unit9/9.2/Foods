@@ -1,0 +1,98 @@
+//HealthyFood.java
+public class HealthyFood extends Food
+{
+    private String group;
+    private String color;
+    
+    public HealthyFood(String name, int calories, String group, String color) {
+        super(name, calories);
+        this.group = group;
+        this.color = color;
+    }
+    
+    public String getGroup() {
+        return group;
+    }
+    
+    public String getColor() {
+        return color;
+    }
+}
+
+
+//Fruit.java
+public class Fruit extends HealthyFood
+{
+  private boolean isInSeason;
+  private String majorVitamins;
+  
+  public Fruit(String name, int calories, String color, boolean isInSeason, String majorVitamins) {
+      super(name, calories, "Fruit", color);
+      this.isInSeason = isInSeason;
+      this.majorVitamins = majorVitamins;
+  }
+  
+  public boolean isInSeason() {
+      return isInSeason;
+  }
+  
+  public String getVitamins() {
+      return majorVitamins;
+  }
+  
+}
+
+
+//FoodTester.java
+public class FoodTester
+{
+    public static void main(String[] args)
+    {
+        // Test each of your classes
+        Food iceCream = new Food("Ice Cream", 200);
+        HealthyFood food2 = new HealthyFood("fsdf", 21490, "lqrwj", "afjew");
+        System.out.println(food2);
+        Fruit food3 = new Fruit("af", 123, "afsd", true, "wqrd");
+        System.out.println(food3);
+        // Make an object of each type
+        // Use the getters to verify the fields are set correctly
+        System.out.println(iceCream.toString());
+        System.out.println(iceCream.getName() +
+        iceCream.getCalories() +
+        food2.getName() +
+        food2.getCalories() +
+        food2.getGroup() +
+        food2.getColor() + 
+        food3.getName() +
+        food3.getCalories() +
+        food3.getGroup() +
+        food3.getColor() +
+        food3.isInSeason() +
+        food3.getVitamins());
+    }
+}
+
+
+//Food.java
+public class Food
+{
+    private String name;
+    private int calories;
+    
+    public Food(String name, int calories) {
+        this.name = name;
+        this.calories = calories;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public int getCalories() {
+        return calories;
+    }
+    
+    public String toString() {
+        return name + " has " + calories + " calories";
+    }
+}
