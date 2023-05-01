@@ -1,0 +1,90 @@
+//StudentAccount.java
+public class StudentAccount extends Account
+{
+    // Complete this class with Override methods.   
+    
+    public StudentAccount(int accountNumber, double openingBal){
+        super(accountNumber, openingBal);
+    }
+    
+    // Students get a 10% bonus on depositing
+    
+    
+    
+    // Students pay a $1.50 fee for withdrawing
+    
+    
+    
+    // toString() Should read: Student account current balance $__.__
+    public void deposit(double amount){
+       super.setBalance(super.getBalance() + amount + (amount * 0.1));
+       
+    }
+    
+    // Subtract amount from balance
+    public void withdraw(double amount){
+        super.setBalance(super.getBalance() - amount - 1.50);
+        
+    }
+    
+    // Should read: Regular account current balance $__.__
+    public String toString(){
+       return "Student account current balance $" + super.getBalance();
+       
+    }
+}
+
+
+//BankTester.java
+public class BankTester
+{
+    public static void main(String[] args)
+    {
+        // Test both of your classes
+        // Make sure you call every method you wrote!
+        System.out.println("hi");
+        System.out.println("f");
+    }
+}
+
+
+//Account.java
+public class Account
+{
+    private int accountNumber;
+    private double balance;
+    
+    // Initialize values in constructor
+    public Account(int accountNumber, double balance){
+       this.accountNumber = accountNumber;
+       this.balance = balance;
+    }
+    
+    // Complete the accessor method
+    public double getBalance(){
+        return balance;
+        
+    }
+    
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+    
+    // Add amount to balance
+    public void deposit(double amount){
+       balance = balance + amount;
+       
+    }
+    
+    // Subtract amount from balance
+    public void withdraw(double amount){
+        this.balance = this.balance - amount;
+        
+    }
+    
+    // Should read: Regular account current balance $__.__
+    public String toString(){
+       return "Regular account current balance $" + balance;
+       
+    }
+}
