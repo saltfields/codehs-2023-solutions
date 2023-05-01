@@ -1,0 +1,55 @@
+//DistanceTester.java
+public class DistanceTester
+{
+    public static void main(String[] args)   
+    {
+        // Create three Distance objects
+        Distance one = new Distance(5);
+        Distance two = new Distance(20);
+        Distance three = new Distance(10);
+        // Convert one to miles, one to leagues and
+        // double one mileage
+        double uno = one.toMiles();
+        double dos = one.toLeagues();
+        double tres = one.doubleMiles();
+        
+        // Print out the converted values
+        // Use the getter!
+        System.out.println(one.getKilometers() + " km = " + uno + " miles");
+        System.out.println(two.getKilometers() + " km = " + dos + " leagues");
+        System.out.println(three.getKilometers() + " km = " + tres + " miles (round trip)");
+        
+    }
+}
+
+
+//Distance.java
+public class Distance
+{
+    private double kilometers;
+    
+    public Distance(double unitsIn)
+    {
+        kilometers = unitsIn;
+    }
+    
+    public double toMiles()
+    {
+        return kilometers / 1.609;
+    }
+    
+    public double toLeagues()
+    {
+        return kilometers / 5.556;
+    }
+    
+    public double doubleMiles()
+    {
+        return (kilometers / 1.609) * 2;
+    }
+    
+    public double getKilometers()
+    {
+        return kilometers;
+    }
+}
