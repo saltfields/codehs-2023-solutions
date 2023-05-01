@@ -1,0 +1,47 @@
+//PointTester.java
+public class PointTester
+{
+    public static void main(String[] args)
+    {
+        Point p = new Point(10, 5);
+        System.out.println(p);
+        p.move(3, 4);
+        
+        System.out.println(p);
+        
+        Point h = new Point(2, 4);
+        
+        System.out.println(h);
+        
+        h.move(5, 2);
+        // 2 units in the y direction
+        System.out.println(h);
+        // Print out the point again to see that it moved
+
+    }
+}
+
+
+//Point.java
+public class Point
+{
+    private int x;
+    private int y;
+    
+    public Point(int xCoord, int yCoord)
+    {
+        x = xCoord;
+        y = yCoord;
+    }
+    
+    public void move(int dx, int dy)
+    {
+        x += dx;
+        y += dy;
+    }
+    
+    public String toString()
+    {
+        return x + ", " + y;
+    }
+}
