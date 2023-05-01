@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class CYOA
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        // Start by importing your code from the previous exercise
+        System.out.println("Do you want to [r]un or [f]ight the monster?");
+        String firstChoice = input.nextLine();
+        // run or fight the monster
+        
+        if (firstChoice.toUpperCase().substring(0,1).equals("R"))
+        {
+            //run
+            System.out.println("You get away, but you lose half your gold!");
+                // you get away but lose half your gold
+        }
+        
+        if (firstChoice.toUpperCase().substring(0,1).equals("F"))
+        {
+            //fight
+            System.out.println("Would you like to use your [s]word or your [p]otions?");
+            String secondChoice = input.nextLine();
+                // sword or potion
+            
+            if (secondChoice.toUpperCase().substring(0,1).equals("S"))
+            {
+                    // sword
+                    System.out.println("You deal 10 damage!");
+                        // you deal 10 damage
+            }
+                    // potion
+            if (secondChoice.toUpperCase().substring(0,1).equals("P"))
+            {
+                        System.out.println("Would you like to use a [h]ealing or a [d]amage potion?");
+                        String thirdChoice = input.nextLine();
+                        // healing or damage potion
+                        if (thirdChoice.toUpperCase().substring(0,1).equals("H"))
+                        {
+                            System.out.println("You regain 15 health!");
+                            // healing
+                            
+                                // you regain 15 health
+                        }
+                            // damage
+                        if (thirdChoice.toUpperCase().substring(0,1).equals("D"))
+                        {
+                            System.out.println("You deal 15 damage!");
+                            // healing
+                            
+                                // you regain 15 health
+                        }
+                                // you deal 15 damage
+            }
+        }
+    }
+}
